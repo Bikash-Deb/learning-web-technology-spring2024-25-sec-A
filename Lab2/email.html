@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Email Validation</title>
+
+    <style>
+        /* Tooltip styling */
+        .tooltip {
+            border:none;
+            cursor:pointer;
+            position:relative;
+            display:inline-block;
+            font-size: 16px;
+            color: rgb(22, 22, 234);
+        }
+
+        .tooltip .tooltiptext {
+            visibility:hidden;
+            width:210px;
+            background-color: rgb(0, 0, 0);
+            text-align:center;
+            padding:6px;
+            border-radius:6px;
+            color:rgb(255, 255, 255);
+
+
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 55%;
+            transform: translateX(-55%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        </style>
+</head>
+
+<body>
+    <main>
+        <h1 id="abc">JS Email</h1>
+        <form action="home2.html" onsubmit="return validate()">
+            Email: <input type="text" name="email" id="email" value="" />
+            <button type="button" class="tooltip">
+                ℹ️
+                <span class="tooltiptext">Example: user@example.com</span>
+            </button>
+            <p id="umsg" style="color: red;"></p>
+
+            <input type="submit" name="submit" id="submit" value="Submit" />
+        </form>
+    </main>
+
+    <script>
+        function validate() {
+            let email = document.getElementById('email').value;
+            let msg1 = document.getElementById('umsg');
+
+          
+
+            
+            if (email === "") {
+                msg1.innerHTML = "Please enter the fill up email";
+                return false;
+            }
+
+            
+            if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) {
+                msg1.innerHTML = "Must be a valid email address!";
+                return false;
+            }
+
+
+            return true; 
+        }
+    </script>
+
+</body>
+
+</html>

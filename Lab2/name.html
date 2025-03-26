@@ -47,6 +47,7 @@
             for (let i = 0; i < username.length; i++) {
                 if (!validChars.includes(username[i])) {
                     msg1.innerHTML = "Use only letters, dots, and dashes in your username";
+                    msg1.style.color = "red";
                     return false;
                 }
             }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gender</title>
+</head>
+<body>
+    <main>
+        <h1 id="abc">Js Degree</h1>
+        <form onsubmit="return validate()">
+        <fieldset>
+        <legend cals border="1" weight="100">Degree</legend>
+        <table>
+            
+            <td>
+                <input type="checkbox" name="degree" id="">SSC
+                <input type="checkbox" name="" id="">HSC
+                <input type="checkbox" name="degree" id="">BSc
+
+            </td>
+            
+            <tr>
+                <td colspan="2">
+                    <p id="gmsg" style="color:red;"></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit" id="submit" value="submit" />
+                </td>
+            </tr>
+
+        </table>
+        
+        </fieldset>
+        </main>
+        <script>
+            function validate() {
+                let genders = document.getElementsByName('degree');
+                let msg = document.getElementById('gmsg');
+                
+                for (let i = 0; i < genders.length; i++) {
+                    if (genders[i].checked) {
+                        msg.innerHTML = "";
+                        return true;
+                    }
+                }
+                
+                msg.innerHTML = "Please select a degree.";
+                return false;
+            }
+        </script>
+        </body>

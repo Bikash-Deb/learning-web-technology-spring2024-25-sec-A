@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Blood Validation</title>
+</head>
+<body>
+    <main>
+        <form action="home.html" onsubmit="return validate()">
+            <table>
+                <tr>
+                    <td>Blood group:</td>
+                    <td>
+                        <select id="bloodgroup">
+                            <option value="">Select a blood group</option>
+                            <option value="a+">A+</option>
+                            <option value="a-">A-</option>
+                            <option value="ab+">AB+</option>
+                            <option value="ab-">AB-</option>
+                            <option value="o+">O+</option>
+                            <option value="o-">O-</option>
+                    
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><p id="umsg" style="color: rgb(246, 5, 5);"></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+
+    <script>
+        function validate() {
+            let select1 = document.getElementById("bloodgroup").value;
+            let umsg = document.getElementById("umsg");
+
+            // Reset error message
+            umsg.innerHTML = "";
+
+            if (select1 === "") {
+                umsg.innerHTML = "Please select a blood group.";
+                return false;
+            }
+            return true; 
+        }
+    </script>
+</body>
+</html>
+
+
+    
